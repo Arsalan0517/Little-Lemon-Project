@@ -1,7 +1,3 @@
-import heroImage from "./hero.jpg"; // restaurant image
-import greekSalad from "./greek-salad.jpg";
-import bruschetta from "./bruschetta.jpg";
-import lemonDessert from "./lemon-dessert.jpg";
 
 function Main() {
   return (
@@ -18,7 +14,7 @@ function Main() {
         </div>
 
         <div className="hero-image">
-          <img src={heroImage} alt="Restaurant" />
+          <img src="/hero.jpg" alt="Restaurant" />
         </div>
       </section>
 
@@ -32,7 +28,7 @@ function Main() {
         <div className="cards">
           {/* Card 1 */}
           <div className="card">
-            <img src={greekSalad} alt="Greek Salad" />
+            <img src="/greek-salad.jpg" alt="Greek Salad" />
             <div className="card-content">
               <h3>Greek Salad <span>$12.99</span></h3>
               <p>
@@ -44,7 +40,7 @@ function Main() {
 
           {/* Card 2 */}
           <div className="card">
-            <img src={bruschetta} alt="Bruschetta" />
+            <img src="/bruschetta.jpg" alt="Bruschetta" />
             <div className="card-content">
               <h3>Bruschetta <span>$5.99</span></h3>
               <p>
@@ -56,7 +52,7 @@ function Main() {
 
           {/* Card 3 */}
           <div className="card">
-            <img src={lemonDessert} alt="Lemon Dessert" />
+            <img src="/lemon-dessert.jpg" alt="Lemon Dessert" />
             <div className="card-content">
               <h3>Lemon Dessert <span>$5.00</span></h3>
               <p>
@@ -110,8 +106,8 @@ function Main() {
         </div>
 
         <div className="about-images">
-          <img src="./chef1.jpg" alt="Chef 1" />
-          <img src="./chef2.jpg" alt="Chef 2" />
+          <img src="/chef1.jpg" alt="Chef 1" />
+          <img src="/chef2.jpg" alt="Chef 2" />
         </div>
       </section>
     </main>

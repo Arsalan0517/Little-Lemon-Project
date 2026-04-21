@@ -1,10 +1,10 @@
-import logo from "./public/Asset 16@4x.png"; // make sure the path is correct
+
 
 function Nav() {
   return (
     <nav>
       <div className="nav-container">
-        <img src={logo} alt="Little Lemon Logo" />
+        <img src="/ll_logo.png" alt="Little Lemon Logo" />
 
         <ul className="nav-links">
           <li><a href="/">Home</a></li>

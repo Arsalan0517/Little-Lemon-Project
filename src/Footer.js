@@ -1,4 +1,4 @@
-import logo from "./public/Asset 16@4x.png"; // adjust path if needed
+
 
 function Footer() {
   return (
@@ -7,7 +7,7 @@ function Footer() {
 
         {/* Logo */}
         <div className="footer-logo">
-          <img src={logo} alt="Little Lemon Logo" />
+          <img src="/hero.jpg" alt="Little Lemon Logo" />
         </div>
 
         {/* Navigation */}
