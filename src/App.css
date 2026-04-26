@@ -1,38 +1,381 @@
-.App {
+/* ===============================
+   GLOBAL STYLES
+=================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+   border-radius: 16px;
+}
+
+section {
+  padding: 60px 10%;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* ===============================
+   HEADER
+=================================*/
+
+header {
   text-align: center;
+  padding: 30px;
+  background: #f4ce14;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  font-size: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header p {
+  font-size: 1.2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ===============================
+   NAVIGATION (Flexbox)
+=================================*/
+
+nav {
+  background: #ffffff;
+  /* padding: 15px 10%; */
+}
+
+.nav-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.nav-container img {
+  height: 60px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+/* ===============================
+   HERO SECTION (Grid)
+=================================*/
+
+.hero {
+  background-color: #495E57;
+  color: white;
+  /* padding: 80px 80px; */
+  position: relative;   /* IMPORTANT */
+  overflow: visible;
+  
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero img {
+  width: 380px;
+  height: 399px;
+  border-radius: 16px;
+  position: absolute;
+  right: 80px;
+  bottom: -60px;   /* pushes image outside */
+}
+
+/* HERO TEXT CONTAINER */
+.hero-text {
+  max-width: 420px;
+}
+
+/* LITTLE LEMON TITLE */
+.hero-text h1 {
+  font-size: 64px;
+  font-family: 'Markazi Text', serif;
+  color: #F4CE14;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* CHICAGO SUBTITLE */
+.hero-text h2 {
+  font-size: 32px;
+  font-family: 'Markazi Text', serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 400;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* DESCRIPTION TEXT */
+.hero-text p {
+  font-size: 18px;
+  font-family: 'Karla', sans-serif;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* RESERVE BUTTON */
+.hero-text button {
+  background-color: #F4CE14;
+  color: black;
+  border: none;
+  /* padding: 14px 28px; */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* BUTTON HOVER EFFECT */
+.hero-text button:hover {
+  background-color: #e6c012;
+}
+
+.hero button {
+  margin-top: 15px;
+  /* padding: 12px 20px; */
+  background: #f4ce14;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===============================
+   SPECIALS SECTION (Grid)
+=================================*/
+
+.specials {
+  padding: 80px 80px;
+  background-color: #EDEFEE;
+}
+
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.specials-header h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #333;
+}
+
+.specials-header button {
+  background-color: #F4CE14;
+  border: none;
+  /* padding: 14px 28px; */
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 260px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  /* padding: 20px; */
+}
+
+.card-content h3 {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Markazi Text', serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-content span {
+  color: #EE9972;
+  font-weight: bold;
+}
+
+.card-content p {
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+
+
+/* ===============================
+   TESTIMONIALS (Grid)
+=================================*/
+
+.testimonials {
+  background: #f4ce14;
+  text-align: center;
+}
+
+.testimonial-cards {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: white;
+  /* padding: 20px; */
+  border-radius: 10px;
+}
+
+/* ===============================
+   ABOUT SECTION (Grid)
+=================================*/
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-images {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  justify-items: center;
+}
+
+/* ===============================
+   FOOTER (Grid)
+=================================*/
+
+footer {
+  background: #edefee;
+  /* padding: 60px 10%; */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-logo img {
+  max-width: 300px;
+  margin-left: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=================================*/
+
+/* -------- Tablet -------- */
+
+@media (max-width: 1024px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* -------- Mobile -------- */
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 40px 5%;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 }
