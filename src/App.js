@@ -1,21 +1,20 @@
-import './App.css';
+import "./App.css";
 
-import Nav from './Components/Nav';
-import Footer from './Components/Footer';
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 
-import Homepage from './Pages/Homepage';
-import BookingPage from './Pages/BookingPage';
-import About from './Pages/About';
-import Menu from './Pages/Menu';
-import Order from './Pages/Order';
-import Login from './Pages/Login';
+import Homepage from "./Pages/Homepage";
+import BookingPage from "./Pages/BookingPage";
+import About from "./Pages/About";
+import Menu from "./Pages/Menu";
+import Order from "./Pages/Order";
+import Login from "./Pages/Login";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
-
+    <>
       <Nav />
 
       <Routes>
@@ -28,8 +27,7 @@ function App() {
       </Routes>
 
       <Footer />
-
-    </BrowserRouter>
+    </>
   );
 }
 
