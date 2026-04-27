@@ -1,28 +1,22 @@
 import { useState } from "react";
-import { submitAPI } from "../api";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
 
-  /* ---------- FORM STATE ---------- */
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
-  /* ---------- DATE CHANGE (Reducer Trigger) ---------- */
   function handleDateChange(e) {
     const selectedDate = e.target.value;
-
     setDate(selectedDate);
 
-    // Update available times using reducer
     dispatch({
       type: "UPDATE_TIMES",
       date: selectedDate,
     });
   }
 
-  /* ---------- SUBMIT FORM ---------- */
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -33,20 +27,13 @@ function BookingForm({ availableTimes, dispatch }) {
       occasion,
     };
 
-    const success = submitAPI(formData);
-
-    if (success) {
-      alert("Reservation Submitted ✅");
-    } else {
-      alert("Submission Failed ❌");
-    }
+    /* ✅ Call parent function */
+    submitForm(formData);
   }
 
-  /* ---------- JSX ---------- */
   return (
     <form onSubmit={handleSubmit} className="booking-form">
 
-      {/* DATE */}
       <label htmlFor="res-date">Choose date</label>
       <input
         id="res-date"
@@ -56,7 +43,6 @@ function BookingForm({ availableTimes, dispatch }) {
         required
       />
 
-      {/* TIME */}
       <label htmlFor="res-time">Choose time</label>
       <select
         id="res-time"
@@ -72,7 +58,6 @@ function BookingForm({ availableTimes, dispatch }) {
         ))}
       </select>
 
-      {/* GUESTS */}
       <label htmlFor="guests">Number of guests</label>
       <input
         id="guests"
@@ -84,7 +69,6 @@ function BookingForm({ availableTimes, dispatch }) {
         required
       />
 
-      {/* OCCASION */}
       <label htmlFor="occasion">Occasion</label>
       <select
         id="occasion"

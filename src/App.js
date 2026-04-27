@@ -9,8 +9,10 @@ import About from "./Pages/About";
 import Menu from "./Pages/Menu";
 import Order from "./Pages/Order";
 import Login from "./Pages/Login";
+import ConfirmedBooking from "./Pages/ConfirmedBooking";
 
 import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/order" element={<Order />} />
