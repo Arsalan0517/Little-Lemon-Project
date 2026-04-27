@@ -7,8 +7,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
 
+  /* ---------- DATE CHANGE ---------- */
   function handleDateChange(e) {
     const selectedDate = e.target.value;
+
     setDate(selectedDate);
 
     dispatch({
@@ -17,6 +19,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     });
   }
 
+  /* ---------- SUBMIT ---------- */
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -27,13 +30,23 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       occasion,
     };
 
-    /* ✅ Call parent function */
     submitForm(formData);
   }
 
-  return (
-    <form onSubmit={handleSubmit} className="booking-form">
+  const isFormValid =
+    date !== "" &&
+    time !== "" &&
+    guests >= 1 &&
+    guests <= 10;
 
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="booking-form"
+      aria-label="Table Reservation Form"
+    >
+
+      {/* DATE */}
       <label htmlFor="res-date">Choose date</label>
       <input
         id="res-date"
@@ -43,6 +56,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         required
       />
 
+      {/* TIME */}
       <label htmlFor="res-time">Choose time</label>
       <select
         id="res-time"
@@ -58,6 +72,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         ))}
       </select>
 
+      {/* GUESTS */}
       <label htmlFor="guests">Number of guests</label>
       <input
         id="guests"
@@ -69,6 +84,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         required
       />
 
+      {/* OCCASION */}
       <label htmlFor="occasion">Occasion</label>
       <select
         id="occasion"
@@ -79,7 +95,11 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         <option>Anniversary</option>
       </select>
 
-      <button type="submit">
+      <button
+        type="submit"
+        aria-label="Make Your Reservation"
+        disabled={!isFormValid}
+      >
         Make Your Reservation
       </button>
 

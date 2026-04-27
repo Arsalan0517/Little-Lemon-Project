@@ -1,7 +1,7 @@
 import { useReducer } from "react";
-import { useNavigate } from "react-router-dom";   // ✅ ADD
+import { useNavigate } from "react-router-dom";
 import BookingForm from "../Components/BookingForm";
-import { fetchAPI, submitAPI } from "../api";     // ✅ ADD submitAPI
+import { fetchAPI, submitAPI } from "../api";
 
 /* ---------- INITIAL STATE ---------- */
 export function initializeTimes() {
@@ -16,12 +16,12 @@ export function updateTimes(state, action) {
 
 function BookingPage() {
 
-  const navigate = useNavigate();   // ✅ ADD
+  const navigate = useNavigate();
 
   const [availableTimes, dispatch] =
     useReducer(updateTimes, [], initializeTimes);
 
-  /* ✅ SUBMIT FORM FUNCTION */
+  /* ---------- SUBMIT FORM ---------- */
   function submitForm(formData) {
     const success = submitAPI(formData);
 
@@ -31,8 +31,8 @@ function BookingPage() {
   }
 
   return (
-    <main>
-      <h2>Reserve a Table</h2>
+    <main aria-label="Booking Page">
+      <h2 tabIndex="0">Reserve a Table</h2>
 
       <BookingForm
         availableTimes={availableTimes}
